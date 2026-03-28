@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding - Panda & Cat</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+  margin:0;
+  font-family:'Quicksand', sans-serif;
+  overflow-x:hidden;
+  background:#fff;
+}
+
+.hero {
+  height:100vh;
+  background:url('background.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  color:white;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.25);
+}
+
+.content{
+  position:relative;
+  z-index:2;
+  animation:fadeIn 2s ease;
+}
+
+h1{
+  font-family:'Playfair Display', serif;
+  font-size:52px;
+}
+
+.date{
+  font-size:26px;
+  margin-top:10px;
+}
+
+.animals{
+  position:absolute;
+  bottom:30px;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:60px;
+  z-index:2;
+}
+
+.animal{
+  width:130px;
+  animation:play 2s infinite alternate ease-in-out;
+}
+
+.animal.cat{
+  animation-delay:1s;
+}
+
+@keyframes play{
+  0%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-20px) rotate(-5deg)}
+  100%{transform:translateY(0) rotate(5deg)}
+}
+
+.section{
+  padding:80px 20px;
+  text-align:center;
+}
+
+.info{
+  font-size:18px;
+  line-height:1.8;
+}
+
+.btn{
+  margin-top:25px;
+  padding:14px 28px;
+  background:#ff8fa3;
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.falling{
+  position:fixed;
+  top:-10px;
+  width:20px;
+  height:20px;
+  background:white;
+  border-radius:50%;
+  opacity:0.7;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh);
+  }
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px)}
+  to{opacity:1; transform:translateY(0)}
+}
+</style>
+</head>
+<body>
+
+<audio autoplay loop>
+  <source src="Beautiful In White.mp3" type="audio/mpeg">
+</audio>
+
+<div class="hero">
+  <div class="overlay"></div>
+
+  <div class="content">
+    <h1>Minh Trân & ♥</h1>Đức Huy
+    <div class="date">09 May 2026</div>
+    <p>We are getting married 💕</p>
+  </div>
+
+  <div class="animals">
+    <img src="panda.gif" class="animal">
+    <img src="cat.gif" class="animal cat">
+  </div>
+</div>
+
+<div class="section">
+  <h2>Thiệp mời</h2>
+  <div class="info">
+    Trân trọng kính mời bạn đến tham dự lễ cưới của chúng mình 💖<br><br>
+    📍 Địa điểm: [Điền địa điểm]<br>
+    ⏰ Thời gian: 18:00 - 09/05/2026
+  </div>
+  <a class="btn">Xác nhận tham dự</a>
+</div>
+
+<script>
+function createFlower(){
+  const f = document.createElement('div');
+  f.classList.add('falling');
+  f.style.left = Math.random()*100 + 'vw';
+  f.style.animationDuration = (3 + Math.random()*5) + 's';
+  document.body.appendChild(f);
+
+  setTimeout(()=>{
+    f.remove();
+  },8000);
+}
+
+setInterval(createFlower,300);
+</script>
+
+</body>
+</html>
