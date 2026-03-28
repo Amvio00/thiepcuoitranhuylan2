@@ -5,14 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Minh Trân & Đức Huy</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Be+Vietnam+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Be+Vietnam+Pro:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
   font-family:'Be Vietnam Pro',sans-serif;
-  overflow-x:hidden;
-  background:#fff;
+  color:#333;
 }
 
 /* intro */
@@ -20,22 +19,21 @@ body{
   position:fixed;
   inset:0;
   background:#000;
+  color:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#fff;
-  z-index:999;
   flex-direction:column;
+  z-index:999;
 }
 
 .open-btn{
   padding:14px 30px;
+  border:none;
   border-radius:30px;
   background:#ff8fa3;
-  border:none;
   color:#fff;
   font-size:18px;
-  cursor:pointer;
 }
 
 /* hero */
@@ -46,133 +44,105 @@ body{
   align-items:center;
   justify-content:center;
   position:relative;
+  text-align:center;
   color:#fff;
 }
 
 .overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+  background:rgba(0,0,0,0.35);
 }
 
-/* card */
-.card{
+.hero-content{
   position:relative;
   z-index:2;
-  background:rgba(255,255,255,0.12);
-  backdrop-filter:blur(20px);
-  padding:60px 80px;
-  border-radius:30px;
-  text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,0.25);
-  animation:fadeUp 1.2s ease;
 }
 
 h1{
-  font-family:'Playfair Display', serif;
-  font-size:56px;
+  font-family:'Great Vibes', cursive;
+  font-size:64px;
   margin:0;
 }
 
 .date{
-  font-size:24px;
-  margin-top:15px;
+  margin-top:10px;
+  font-size:20px;
 }
 
 .sub{
-  margin-top:12px;
+  margin-top:10px;
+  font-size:16px;
 }
 
 /* couple */
 .couple{
-  position:absolute;
-  bottom:-40px;
-  width:100%;
+  margin-top:-80px;
   display:flex;
   justify-content:center;
   gap:20px;
-  z-index:2;
 }
 
-.couple-img{
-  width:220px;
-  height:300px;
+.couple img{
+  width:180px;
+  height:260px;
   object-fit:cover;
   border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
-  animation:floatCouple 3s ease-in-out infinite;
-}
-
-.left{ transform:rotate(-3deg); }
-.right{ transform:rotate(3deg); }
-
-@keyframes floatCouple{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-15px)}
-  100%{transform:translateY(0)}
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 /* section */
 .section{
-  padding:100px 20px;
+  padding:80px 20px;
   text-align:center;
-  opacity:0;
-  transform:translateY(40px);
-  transition:all 1s ease;
 }
 
-.section.show{
-  opacity:1;
-  transform:translateY(0);
+.title{
+  font-size:28px;
+  margin-bottom:20px;
 }
 
 /* gallery */
 .gallery{
   display:flex;
-  gap:20px;
   overflow-x:auto;
-  padding:20px;
+  gap:15px;
 }
 
 .gallery img{
   height:220px;
-  border-radius:20px;
-  object-fit:cover;
+  border-radius:15px;
+}
+
+/* map */
+.map iframe{
+  width:100%;
+  height:300px;
+  border-radius:15px;
+  border:0;
 }
 
 /* RSVP */
 form{
-  max-width:420px;
+  max-width:400px;
   margin:auto;
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:10px;
 }
 
-input,textarea{
+input, textarea{
   padding:12px;
-  border-radius:12px;
-  border:none;
-  background:#f5f5f5;
+  border-radius:10px;
+  border:1px solid #ddd;
 }
 
 button.submit{
   background:#ff8fa3;
   color:#fff;
   border:none;
-  padding:14px;
-  border-radius:25px;
-}
-
-/* map */
-.map-btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 25px;
-  background:#ff8fa3;
-  color:#fff;
-  border-radius:25px;
-  text-decoration:none;
+  padding:12px;
+  border-radius:20px;
 }
 
 /* music */
@@ -181,16 +151,11 @@ button.submit{
   top:20px;
   right:20px;
   background:#ff8fa3;
-  color:#fff;
   border:none;
   border-radius:50%;
   width:50px;
   height:50px;
-}
-
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(40px)}
-  to{opacity:1;transform:translateY(0)}
+  color:#fff;
 }
 </style>
 </head>
@@ -207,62 +172,56 @@ button.submit{
 </audio>
 <button class="music-btn" onclick="toggleMusic()">🎵</button>
 
+<!-- HERO -->
 <div class="hero">
 <div class="overlay"></div>
 
-<div class="card">
+<div class="hero-content">
   <h1>Minh Trân & Đức Huy</h1>
   <div class="date">09 May 2026</div>
   <div class="sub">We are getting married 💕</div>
 </div>
 
+</div>
+
+<!-- COUPLE -->
 <div class="couple">
-  <img src="cd.jpg" class="couple-img left">
-  <img src="cr.jpg" class="couple-img right">
+  <img src="cd.jpg">
+  <img src="cr.jpg">
 </div>
 
-</div>
-
+<!-- ALBUM -->
 <div class="section">
-<h2>📸 Album cưới</h2>
-<div class="gallery">
-  <img src="1.jpg">
-  <img src="2.jpg">
-  <img src="3.jpg">
-  <img src="4.jpg">
-  <img src="5.jpg">
-</div>
+  <div class="title">📸 Album cưới</div>
+  <div class="gallery">
+    <img src="1.jpg">
+    <img src="2.jpg">
+    <img src="3.jpg">
+    <img src="4.jpg">
+    <img src="5.jpg">
+  </div>
 </div>
 
+<!-- MAP -->
+<div class="section map">
+  <div class="title">📍 Địa điểm tổ chức</div>
+
+  <p><b>PAVILLON TÂN SƠN NHẤT</b></p>
+  <p>202 Đ. Hoàng Văn Thụ, Phường 9, Đức Nhuận, Hồ Chí Minh</p>
+
+  <iframe src="https://www.google.com/maps?q=https://maps.app.goo.gl/a9MdTMnrWKeeFWcu5&output=embed"></iframe>
+</div>
+
+<!-- RSVP -->
 <div class="section">
-<h2>💌 Xác nhận tham dự</h2>
-<form>
-  <input type="text" placeholder="Tên của bạn">
-  <input type="tel" placeholder="Số điện thoại">
-  <textarea placeholder="Lời nhắn"></textarea>
-  <button class="submit">Gửi</button>
-</form>
-</div>
+  <div class="title">💌 Xác nhận tham dự</div>
 
-<div class="section">
-<h2>📍 Địa điểm tổ chức</h2>
-
-<p style="font-size:20px;font-weight:600;">
-PAVILLON TÂN SƠN NHẤT
-</p>
-
-<p>
-202 Đ. Hoàng Văn Thụ, Phường 9, Đức Nhuận, Hồ Chí Minh
-</p>
-
-<iframe 
-src="https://www.google.com/maps?q=https://maps.app.goo.gl/a9MdTMnrWKeeFWcu5&output=embed"
-width="100%" height="300" style="border-radius:15px;border:0;">
-</iframe>
-
-<a href="https://maps.app.goo.gl/a9MdTMnrWKeeFWcu5" target="_blank" class="map-btn">
-📍 Xem đường đi
-</a>
+  <form>
+    <input placeholder="Tên của bạn">
+    <input placeholder="Số điện thoại">
+    <textarea placeholder="Lời nhắn"></textarea>
+    <button class="submit">Gửi</button>
+  </form>
 </div>
 
 <script>
@@ -275,16 +234,6 @@ function toggleMusic(){
   let m=document.getElementById('music');
   m.paused?m.play():m.pause();
 }
-
-const sections = document.querySelectorAll('.section');
-window.addEventListener('scroll', () => {
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      sec.classList.add('show');
-    }
-  });
-});
 </script>
 
 </body>
