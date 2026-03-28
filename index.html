@@ -3,177 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Minh Trân & Đức Huy</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Be+Vietnam+Pro:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body{
-  margin:0;
-  font-family:'Be Vietnam Pro',sans-serif;
-  color:#333;
-}
+body{margin:0;font-family:'Be Vietnam Pro',sans-serif;color:#333}
 
-/* intro */
+/* ===== INTRO THƯ ===== */
 .intro{
-  position:fixed;
-  inset:0;
-  background:#000;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
+  position:fixed;inset:0;
+  background:linear-gradient(135deg,#fff0f5,#ffe4ec);
+  display:flex;align-items:center;justify-content:center;
   z-index:999;
 }
 
-.open-btn{
-  padding:14px 30px;
-  border:none;
-  border-radius:30px;
+.envelope{
+  position:relative;
+  width:320px;height:220px;
+  background:#fff;border-radius:10px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.2);
+  overflow:hidden;
+}
+
+.flap{
+  position:absolute;top:0;width:100%;height:100%;
   background:#ff8fa3;
-  color:#fff;
-  font-size:18px;
-}
-
-/* hero */
-.hero{
-  height:100vh;
-  background:url('background.jpg') center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  text-align:center;
-  color:#fff;
-}
-
-.overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.35);
-}
-
-.hero-content{
-  position:relative;
+  clip-path:polygon(0 0,100% 0,50% 60%);
+  transition:0.8s;
   z-index:2;
 }
 
+.letter{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:20px;
+}
+
+.envelope.open .flap{transform:rotateX(180deg)}
+
+.open-btn{
+  margin-top:10px;
+  padding:10px 20px;
+  border:none;border-radius:20px;
+  background:#ff8fa3;color:#fff;
+}
+
+/* ===== HERO ===== */
+.hero{
+  height:100vh;
+  background:url('background.jpg') center/cover no-repeat;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;text-align:center;color:#fff;
+}
+
+.overlay{
+  position:absolute;inset:0;
+  background:rgba(0,0,0,0.3);
+}
+
+.hero-content{position:relative;z-index:2}
+
 h1{
-  font-family:'Great Vibes', cursive;
-  font-size:64px;
-  margin:0;
+  font-family:'Great Vibes',cursive;
+  font-size:64px;margin:0;
 }
 
-.date{
-  margin-top:10px;
-  font-size:20px;
-}
+.date{margin-top:10px;font-size:20px}
+.sub{margin-top:10px;font-size:16px}
 
-.sub{
-  margin-top:10px;
-  font-size:16px;
-}
-
-/* couple */
+/* ===== COUPLE ===== */
 .couple{
   margin-top:-80px;
-  display:flex;
-  justify-content:center;
-  gap:20px;
+  display:flex;justify-content:center;gap:20px;
 }
 
 .couple img{
-  width:180px;
-  height:260px;
+  width:170px;height:250px;
   object-fit:cover;
   border-radius:20px;
   box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* section */
+/* ===== SECTION ===== */
 .section{
   padding:80px 20px;
   text-align:center;
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
 }
+.section.show{opacity:1;transform:translateY(0)}
 
-.title{
-  font-size:28px;
-  margin-bottom:20px;
-}
+.title{font-size:26px;margin-bottom:20px}
 
-/* gallery */
+/* ===== GALLERY ===== */
 .gallery{
-  display:flex;
-  overflow-x:auto;
-  gap:15px;
+  display:flex;gap:15px;overflow-x:auto;
 }
-
 .gallery img{
-  height:220px;
-  border-radius:15px;
+  height:220px;border-radius:15px;
 }
 
-/* map */
+/* ===== MAP ===== */
 .map iframe{
-  width:100%;
-  height:300px;
-  border-radius:15px;
-  border:0;
+  width:100%;height:300px;
+  border-radius:15px;border:0;
 }
 
-/* RSVP */
+/* ===== RSVP ===== */
 form{
-  max-width:400px;
-  margin:auto;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
+  max-width:400px;margin:auto;
+  display:flex;flex-direction:column;gap:10px;
 }
-
-input, textarea{
-  padding:12px;
-  border-radius:10px;
-  border:1px solid #ddd;
+input,textarea{
+  padding:12px;border-radius:10px;border:1px solid #ddd;
 }
-
 button.submit{
-  background:#ff8fa3;
-  color:#fff;
-  border:none;
-  padding:12px;
-  border-radius:20px;
+  background:#ff8fa3;color:#fff;
+  border:none;padding:12px;border-radius:20px;
 }
 
-/* music */
+/* ===== MUSIC ===== */
 .music-btn{
-  position:fixed;
-  top:20px;
-  right:20px;
-  background:#ff8fa3;
-  border:none;
-  border-radius:50%;
-  width:50px;
-  height:50px;
-  color:#fff;
+  position:fixed;top:20px;right:20px;
+  width:50px;height:50px;
+  border-radius:50%;border:none;
+  background:#ff8fa3;color:#fff;
 }
 </style>
 </head>
 
 <body>
 
+<!-- INTRO -->
 <div class="intro" id="intro">
   <div class="envelope">
     <div class="flap"></div>
-
     <div class="letter">
-      <h2>💌 Thiệp mời</h2>
+      <h2>💌 Thiệp mời cưới</h2>
       <p>Minh Trân & Đức Huy</p>
       <button class="open-btn" onclick="openCard()">Mở thiệp</button>
     </div>
   </div>
 </div>
 
+<!-- MUSIC -->
 <audio id="music" loop>
   <source src="music.mp3">
 </audio>
@@ -182,13 +159,11 @@ button.submit{
 <!-- HERO -->
 <div class="hero">
 <div class="overlay"></div>
-
 <div class="hero-content">
   <h1>Minh Trân & Đức Huy</h1>
   <div class="date">09 May 2026</div>
   <div class="sub">We are getting married 💕</div>
 </div>
-
 </div>
 
 <!-- COUPLE -->
@@ -212,7 +187,6 @@ button.submit{
 <!-- MAP -->
 <div class="section map">
   <div class="title">📍 Địa điểm tổ chức</div>
-
   <p><b>PAVILLON TÂN SƠN NHẤT</b></p>
   <p>202 Đ. Hoàng Văn Thụ, Phường 9, Đức Nhuận, Hồ Chí Minh</p>
 
@@ -222,7 +196,6 @@ button.submit{
 <!-- RSVP -->
 <div class="section">
   <div class="title">💌 Xác nhận tham dự</div>
-
   <form>
     <input placeholder="Tên của bạn">
     <input placeholder="Số điện thoại">
@@ -233,14 +206,27 @@ button.submit{
 
 <script>
 function openCard(){
-  document.getElementById('intro').style.display='none';
-  document.getElementById('music').play();
+  document.querySelector('.envelope').classList.add('open');
+  setTimeout(()=>{
+    document.getElementById('intro').style.display='none';
+    document.getElementById('music').play();
+  },800);
 }
 
 function toggleMusic(){
   let m=document.getElementById('music');
   m.paused?m.play():m.pause();
 }
+
+/* scroll animation */
+const sections=document.querySelectorAll('.section');
+window.addEventListener('scroll',()=>{
+  sections.forEach(sec=>{
+    if(sec.getBoundingClientRect().top < window.innerHeight-100){
+      sec.classList.add('show');
+    }
+  })
+})
 </script>
 
 </body>
