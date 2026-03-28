@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Wedding</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Be+Vietnam+Pro:wght@400;600&display=swap" rel="stylesheet">
@@ -14,7 +15,7 @@ body {
   overflow:hidden;
 }
 
-/* ===== MỞ THIỆP ===== */
+/* ===== INTRO ===== */
 .intro {
   position:fixed;
   inset:0;
@@ -84,33 +85,69 @@ h1 {
   font-size:18px;
 }
 
-/* ===== PANDA MÈO ===== */
+/* ===== ANIMALS ===== */
 .animals {
   position:absolute;
   bottom:20px;
   width:100%;
   display:flex;
   justify-content:center;
-  gap:60px;
+  align-items:center;
+  gap:80px;
   z-index:2;
 }
 
-.animal {
+/* panda */
+.panda-wrap {
+  position:relative;
+}
+
+.panda {
   width:140px;
-  animation:play 2s infinite alternate ease-in-out;
+  animation:pandaMove 2s infinite ease-in-out;
 }
 
+/* flower */
+.flower {
+  position:absolute;
+  width:40px;
+  top:40px;
+  left:80px;
+  animation:giveFlower 2s infinite ease-in-out;
+}
+
+/* cat */
 .cat {
-  animation-delay:1s;
+  width:140px;
+  animation:catReact 2s infinite ease-in-out;
 }
 
-@keyframes play {
-  0% {transform:translateY(0)}
-  50% {transform:translateY(-25px) rotate(-5deg)}
-  100% {transform:translateY(0) rotate(5deg)}
+/* animation */
+@keyframes pandaMove {
+  0% { transform:translateY(0); }
+  50% { transform:translateY(-15px) rotate(-5deg); }
+  100% { transform:translateY(0) rotate(5deg); }
 }
 
-/* ===== HOA BAY ===== */
+@keyframes giveFlower {
+  0% { transform:translateX(0); }
+  50% { transform:translateX(40px); }
+  100% { transform:translateX(0); }
+}
+
+@keyframes catReact {
+  0% { transform:translateY(0); }
+  50% { transform:translateY(-20px) scale(1.05); }
+  100% { transform:translateY(0); }
+}
+
+/* hearts */
+@keyframes heartFly {
+  0% { transform:translateY(0); opacity:1; }
+  100% { transform:translateY(-100px); opacity:0; }
+}
+
+/* falling */
 .fall {
   position:fixed;
   top:-10px;
@@ -128,19 +165,7 @@ h1 {
   }
 }
 
-/* ===== ANIMATION ===== */
-@keyframes fadeUp {
-  from {
-    opacity:0;
-    transform:translateY(40px);
-  }
-  to {
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-/* ===== NÚT NHẠC ===== */
+/* music button */
 .music-btn {
   position:fixed;
   top:20px;
@@ -154,25 +179,29 @@ h1 {
   height:50px;
   cursor:pointer;
 }
+
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(40px);}
+  to {opacity:1; transform:translateY(0);}
+}
 </style>
 </head>
 
 <body>
 
-<!-- MỞ THIỆP -->
+<!-- intro -->
 <div class="intro" id="intro">
   <h2>💌 Bạn có lời mời cưới</h2>
   <button class="open-btn" onclick="openCard()">Mở thiệp</button>
 </div>
 
-<!-- NHẠC -->
+<!-- music -->
 <audio id="music" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
-
 <button class="music-btn" onclick="toggleMusic()">🎵</button>
 
-<!-- HERO -->
+<!-- hero -->
 <div class="hero">
 
   <div class="overlay"></div>
@@ -183,9 +212,14 @@ h1 {
     <div class="sub">We are getting married 💕</div>
   </div>
 
+  <!-- panda + cat -->
   <div class="animals">
-    <img src="panda.gif" class="animal">
-    <img src="cat.gif" class="animal cat">
+    <div class="panda-wrap">
+      <img src="panda.png" class="panda">
+      <img src="flower.png" class="flower">
+    </div>
+
+    <img src="cat.png" class="cat">
   </div>
 
 </div>
@@ -203,15 +237,29 @@ function createFall() {
   f.style.left = Math.random()*100 + 'vw';
   f.style.animationDuration = (3 + Math.random()*5) + 's';
   document.body.appendChild(f);
-
-  setTimeout(() => f.remove(), 8000);
+  setTimeout(()=>f.remove(),8000);
 }
-setInterval(createFall, 300);
+setInterval(createFall,300);
 
-/* bật tắt nhạc */
-function toggleMusic() {
+/* tim bay */
+function createHeart(){
+  const heart = document.createElement('div');
+  heart.innerHTML = '💖';
+  heart.style.position = 'absolute';
+  heart.style.left = '55%';
+  heart.style.bottom = '120px';
+  heart.style.fontSize = '20px';
+  heart.style.animation = 'heartFly 2s ease forwards';
+
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),2000);
+}
+setInterval(createHeart,2000);
+
+/* music */
+function toggleMusic(){
   const m = document.getElementById("music");
-  if (m.paused) m.play();
+  if(m.paused) m.play();
   else m.pause();
 }
 </script>
