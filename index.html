@@ -28,7 +28,7 @@
             color: var(--text-dark);
         }
 
-        /* --- PHẦN 1: HERO (GIỮ NGUYÊN) --- */
+        /* --- PHẦN 1: HERO --- */
         .hero {
             height: 100vh;
             display: flex;
@@ -59,7 +59,7 @@
         }
         .wedding-date { border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 5px 20px; font-size: 1rem; display: inline-block; letter-spacing: 3px; color: #ffffff; margin-top: 10px; }
 
-        /* --- PHẦN 2: GIỚI THIỆU CẶP ĐÔI (GIỮ NGUYÊN) --- */
+        /* --- PHẦN 2: CẶP ĐÔI (SỬA LỖI LỆCH TRÁI) --- */
         .couple-intro {
             background-color: var(--moss-green);
             padding: 100px 20px;
@@ -68,107 +68,112 @@
             position: relative;
             overflow: hidden;
         }
-        .flower-decor { position: absolute; width: 350px; opacity: 0.3; z-index: 1; pointer-events: none; }
-        .flower-1 { top: -50px; right: -80px; transform: rotate(10deg); }
-        .flower-2 { bottom: -50px; left: -80px; transform: rotate(190deg); }
         .intro-quote { position: relative; z-index: 2; margin-bottom: 60px; }
         .intro-quote h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; letter-spacing: 2px; text-transform: uppercase; margin: 0; }
         .line { width: 1px; height: 60px; background-color: rgba(255,255,255,0.3); margin: 20px auto; }
-        .couple-grid { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 40px; max-width: 450px; margin: 0 auto; }
-        .person-card { position: relative; border-radius: 30px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
+        
+        .couple-grid { 
+            position: relative; 
+            z-index: 2; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 40px; 
+            max-width: 900px; /* Tăng max-width để chứa 2 ảnh song song */
+            margin: 0 auto; /* Căn giữa toàn bộ khối ảnh */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .person-card { 
+            position: relative; 
+            border-radius: 30px; 
+            overflow: hidden; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            width: 100%;
+            max-width: 400px; /* Giới hạn độ rộng ảnh */
+        }
         .person-card img { width: 100%; display: block; object-fit: cover; height: 550px; }
         .person-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 40px 20px 25px; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); }
         .role-text-card { font-family: 'Great Vibes', cursive; font-size: 2.8rem; margin-bottom: -5px; color: var(--metallic-gold); }
         .name-text-card { font-family: 'Playfair Display', serif; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: #ffffff; }
 
-        /* --- PHẦN 3: THÔNG TIN CHI TIẾT (NỀN NHÁM XUYÊN SUỐT) --- */
+        /* --- PHẦN 3: THÔNG TIN CHI TIẾT --- */
         .details-section {
             background: url('image_21.jpg') repeat;
-            padding: 100px 20px;
+            padding: 80px 15px;
             text-align: center;
             color: var(--moss-green);
         }
 
-        .family-info { display: grid; grid-template-columns: 1fr; gap: 40px; max-width: 900px; margin: 0 auto 60px; }
-        .family-side h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; border-bottom: 1px solid rgba(45, 62, 45, 0.2); display: inline-block; padding-bottom: 5px; }
-        .family-side p { margin: 5px 0; line-height: 1.6; font-weight: 500; }
+        /* Ép song song Nhà Trai - Nhà Gái */
+        .family-info { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; 
+            max-width: 900px; 
+            margin: 0 auto 40px; 
+        }
+        .family-side h3 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(0.9rem, 3vw, 1.2rem); 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            margin-bottom: 10px; 
+            border-bottom: 1px solid rgba(45, 62, 45, 0.2); 
+            display: inline-block; 
+            padding-bottom: 5px; 
+        }
+        .family-side p { margin: 3px 0; line-height: 1.4; font-weight: 500; font-size: clamp(0.7rem, 2.5vw, 0.9rem); }
 
-        /* LOGO MỚI (TO HƠN) */
         .wedding-logo-large {
-            width: 200px; 
+            width: clamp(140px, 20vw, 200px);
             height: auto;
-            margin: 0 auto 30px;
+            margin: 20px auto;
             display: block;
-            opacity: 0.9;
         }
 
-        .invite-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; line-height: 1.6; margin: 30px auto; max-width: 600px; }
-
-        /* KHU VỰC TÊN VÀ DẤU & NGHỆ THUẬT */
-        .names-container { margin: 50px 0; display: flex; flex-direction: column; align-items: center; }
-        .role-title { font-family: 'Playfair Display', serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 8px; opacity: 0.8; }
-        .name-display { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 5vw, 2.5rem); text-transform: uppercase; letter-spacing: 5px; font-weight: 400; }
-        .ampersand { font-family: 'Great Vibes', cursive; font-size: 4rem; color: var(--metallic-gold); margin: 10px 0; line-height: 1; display: block; }
-
-        /* BỐ CỤC THỜI GIAN KIỂU HÌNH 2 */
-        .event-info-container {
-            max-width: 700px;
-            margin: 60px auto 0;
-            font-family: 'Playfair Display', serif;
+        .invite-text { 
+            font-family: 'Playfair Display', serif; 
+            font-style: italic; 
+            font-size: clamp(0.9rem, 3vw, 1.2rem); 
+            line-height: 1.8; 
+            margin: 30px auto; 
+            max-width: 90%; 
         }
-        .info-title { font-size: 1.4rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; }
-        .wedding-time-label { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
-        .big-time { font-size: 3rem; font-weight: 400; margin: 10px 0; color: var(--moss-green); }
+
+        .names-container { margin: 40px 0; }
+        .name-display { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 5vw, 2.5rem); text-transform: uppercase; letter-spacing: 4px; }
+        .ampersand { font-family: 'Great Vibes', cursive; font-size: clamp(2.5rem, 8vw, 4rem); color: var(--metallic-gold); margin: 5px 0; line-height: 1; display: block; }
+
+        /* Bố cục Thời gian & Tiệc cưới */
+        .event-info-container { max-width: 700px; margin: 60px auto 0; font-family: 'Playfair Display', serif; }
+        .big-time { font-size: clamp(2rem, 8vw, 3.5rem); font-weight: 400; margin: 10px 0; color: var(--moss-green); }
         
-        .date-display-flex {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
-        }
-        .date-side { font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; min-width: 100px; }
-        .date-main { font-size: 4rem; font-weight: 700; color: var(--moss-green); line-height: 1; }
-        .date-divider { width: 1px; height: 50px; background: var(--moss-green); opacity: 0.4; }
+        .date-display-flex { display: flex; align-items: center; justify-content: center; gap: clamp(10px, 4vw, 20px); margin: 20px 0; }
+        .date-side { font-size: clamp(0.7rem, 2vw, 1rem); letter-spacing: 1px; text-transform: uppercase; min-width: 70px; }
+        .date-main { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 700; line-height: 1; }
+        .date-divider { width: 1px; height: clamp(30px, 6vw, 50px); background: var(--moss-green); opacity: 0.4; }
 
-        .year-display { font-size: 1.5rem; letter-spacing: 5px; margin-top: 10px; }
-        .lunar-date { font-style: italic; font-size: 1rem; margin: 15px 0 40px; opacity: 0.8; }
+        .lunar-date { font-style: italic; font-size: 0.9rem; margin-bottom: 40px; opacity: 0.8; }
 
-        .timeline-flex {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-bottom: 40px;
-        }
-        .time-box h4 { font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 5px; font-weight: 400; }
-        .time-box p { font-size: 1.4rem; font-weight: 600; margin: 0; }
+        .timeline-flex { display: flex; justify-content: center; gap: clamp(20px, 10vw, 50px); margin-bottom: 40px; }
+        .time-box h4 { font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 5px; font-weight: 400; }
+        .time-box p { font-size: 1.2rem; font-weight: 600; margin: 0; }
 
-        .location-text { font-size: 1.1rem; line-height: 1.8; margin-top: 30px; }
         .btn-rsvp {
-            background: var(--moss-green); color: white; border: none; padding: 18px 50px; border-radius: 50px;
-            cursor: pointer; font-weight: 600; letter-spacing: 2px; margin-top: 40px; transition: all 0.3s ease;
+            background: var(--moss-green); color: white; border: none; padding: 15px 40px; border-radius: 50px;
+            cursor: pointer; font-weight: 600; letter-spacing: 2px; margin-top: 30px; transition: all 0.3s ease;
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 600px) {
-            .hero { padding-top: 8vh; }
-            .couple-grid { gap: 30px; }
-            .date-display-flex { gap: 10px; }
-            .date-main { font-size: 3rem; }
-            .date-side { font-size: 0.7rem; min-width: 70px; }
-            .timeline-flex { gap: 30px; }
-            .wedding-logo-large { width: 150px; }
-        }
-
+        /* RESPONSIVE CHO WEB (MÀN HÌNH LỚN) */
         @media (min-width: 768px) {
-            .couple-grid { flex-direction: row; max-width: 900px; gap: 40px; }
-            .family-info { grid-template-columns: 1fr 1fr; gap: 60px; }
+            .couple-grid { flex-direction: row; }
         }
     </style>
 </head>
 <body>
 
-    <!-- PHẦN 1: HERO -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content" data-aos="fade-up">
             <p class="welcome-text">WELCOME TO OUR WEDDING</p>
@@ -177,11 +182,8 @@
         </div>
     </section>
 
-    <!-- PHẦN 2: CẶP ĐÔI -->
+    <!-- COUPLE SECTION -->
     <section class="couple-intro">
-        <img src="hình_hoa_1.png" class="flower-decor flower-1" alt="hoa">
-        <img src="hình_hoa_2.png" class="flower-decor flower-2" alt="hoa">
-
         <div class="intro-quote" data-aos="fade-up">
             <h2>When Two Hearts<br>Beat As One</h2>
             <div class="line"></div>
@@ -207,7 +209,7 @@
         </div>
     </section>
 
-    <!-- PHẦN 3: THÔNG TIN LỄ CƯỚI (NỀN IMAGE_21 XUYÊN SUỐT) -->
+    <!-- DETAILS SECTION (NỀN IMAGE_21) -->
     <section class="details-section">
         
         <div class="family-info" data-aos="fade-up">
@@ -215,13 +217,13 @@
                 <h3>Nhà Trai</h3>
                 <p>Ông: Mai Văn Thọ</p>
                 <p>Bà: Vũ Thuý Phượng</p>
-                <p style="font-size: 0.85rem; opacity: 0.8;">Phan Huy Ích, P. Tân Sơn, TP. HCM</p>
+                <p style="opacity: 0.7;">TP. Hồ Chí Minh</p>
             </div>
             <div class="family-side">
                 <h3>Nhà Gái</h3>
                 <p>Ông: Nguyễn Quốc Hưng</p>
                 <p>Bà: Đoàn Thị Thu Tâm</p>
-                <p style="font-size: 0.85rem; opacity: 0.8;">Phước An 2, Xã Phước Hậu, Tỉnh Khánh Hoà</p>
+                <p style="opacity: 0.7;">Tỉnh Khánh Hoà</p>
             </div>
         </div>
 
@@ -233,19 +235,16 @@
         </div>
 
         <div class="names-container" data-aos="fade-up">
-            <div class="role-title">Út Nam</div>
             <div class="name-display">MAI ĐỨC HUY</div>
             <span class="ampersand">&</span>
-            <div class="role-title">Út Nữ</div>
             <div class="name-display">NGUYỄN THỊ MINH TRÂN</div>
         </div>
 
-        <!-- BỐ CỤC TIỆC CƯỚI GIỐNG HÌNH 2 -->
+        <!-- THÔNG TIN TIỆC CƯỚI -->
         <div class="event-info-container" data-aos="fade-up">
-            <div class="info-title">Thông Tin Tiệc Cưới</div>
-            <div class="wedding-time-label">Tiệc cưới sẽ diễn ra vào lúc:</div>
+            <div style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 20px;">Thông Tin Tiệc Cưới</div>
             
-            <div class="big-time">18:30</div>
+            <div class="big-time">18:00</div>
 
             <div class="date-display-flex">
                 <div class="date-side">Thứ Bảy</div>
@@ -255,7 +254,7 @@
                 <div class="date-side">Tháng 05</div>
             </div>
 
-            <div class="year-display">2026</div>
+            <div style="font-size: 1.2rem; letter-spacing: 5px; margin-bottom: 10px;">2026</div>
             <div class="lunar-date">(Tức ngày 23/03 Bính Ngọ)</div>
 
             <div class="timeline-flex">
@@ -269,13 +268,13 @@
                 </div>
             </div>
 
-            <div class="location-text">
+            <div style="line-height: 1.8;">
                 Tại Nhà hàng: <b>PAVILLON TÂN SƠN NHẤT</b><br>
                 202 Hoàng Văn Thụ, P. 9, Q. Phú Nhuận, TP. HCM<br>
                 Sảnh tiệc: <b>CORMORANT GARAMOND</b>
             </div>
 
-            <div id="countdown" style="margin-top: 30px; font-weight: 400; letter-spacing: 1px;">
+            <div id="countdown" style="margin-top: 30px;">
                 Cùng đếm ngược: <br>
                 <span id="timer" style="font-weight: 600; color: var(--metallic-gold);"></span>
             </div>
@@ -284,7 +283,7 @@
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 50px 20px; background: #fff; font-size: 0.75rem; color: #aaa; letter-spacing: 1px;">
+    <footer style="text-align: center; padding: 40px 20px; font-size: 0.7rem; color: #888; letter-spacing: 1px;">
         DESIGNED FOR THE SPECIAL DAY OF MINH TRAN & DUC HUY © 2026
     </footer>
 
@@ -292,8 +291,8 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // Script Đếm ngược
-        const weddingDate = new Date("May 9, 2026 18:30:00").getTime();
+        // Đếm ngược đến ngày 9/5/2026
+        const weddingDate = new Date("May 9, 2026 18:00:00").getTime();
         setInterval(function() {
             const now = new Date().getTime();
             const distance = weddingDate - now;
