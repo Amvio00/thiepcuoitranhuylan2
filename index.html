@@ -305,4 +305,18 @@
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            const timerElement = document.getElementById("timer");
+            if (timerElement) {
+                timerElement.innerHTML = days + " ngày " + hours + " giờ " + minutes + " phút " + seconds + " giây ";
+            }
+
+            if (distance < 0) {
+                clearInterval(timerUpdate);
+                if (timerElement) timerElement.innerHTML = "LỄ CƯỚI ĐANG DIỄN RA";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
