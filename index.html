@@ -31,7 +31,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start; 
-            padding-top: 10vh;
+            padding-top: 10vh; 
             align-items: center;
             text-align: center;
             position: relative;
@@ -52,6 +52,15 @@
             width: 90%; 
         }
 
+        .welcome-text {
+            letter-spacing: 4px;
+            font-size: 0.8rem;
+            color: #ffffff;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+        }
+
         .main-title {
             font-family: 'Great Vibes', cursive;
             color: var(--metallic-gold);
@@ -69,74 +78,211 @@
             display: inline-block;
             letter-spacing: 3px;
             color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
             margin-top: 10px;
         }
 
-        /* --- PHẦN 2: GIỚI THIỆU CÔ DÂU CHÚ RỂ (NỀN XANH RÊU) --- */
+        /* --- PHẦN 2: GIỚI THIỆU CD-CR (NỀN XANH RÊU) --- */
         .couple-intro {
             background-color: var(--moss-green);
-            padding: 100px 20px;
+            padding: 80px 20px;
             text-align: center;
             color: #ffffff;
-            position: relative; /* Quan trọng để hoa căn theo khung này */
-            overflow: hidden; /* Cắt phần hoa thừa ra ngoài khung */
+            position: relative; /* Quan trọng để hoa bám theo khung này */
+            overflow: hidden; /* Cắt phần hoa dư ra ngoài */
         }
 
-        /* TRANG TRÍ HOA */
+        /* Code thêm hình hoa */
         .flower-decor {
             position: absolute;
-            width: 300px; /* Độ lớn của hoa */
-            opacity: 0.6; /* Làm mờ hoa để chìm vào nền như mẫu */
+            width: 350px; /* Kích thước hoa */
+            opacity: 0.4; /* Làm hoa chìm nhẹ vào nền như mẫu */
             z-index: 1;
-            pointer-events: none; /* Để hoa không che mất nút hay link */
+            pointer-events: none;
         }
 
-        .flower-top-right {
-            top: -20px;
-            right: -50px;
-            transform: rotate(15deg); /* Xoay nhẹ cho tự nhiên */
+        .flower-1 {
+            top: -50px;
+            right: -80px;
+            transform: rotate(10deg);
         }
 
-        .flower-bottom-left {
+        .flower-2 {
             bottom: -50px;
-            left: -50px;
-            transform: rotate(190deg); /* Xoay ngược lại cho góc đối xứng */
+            left: -80px;
+            transform: rotate(190deg);
         }
 
         .intro-quote {
             position: relative;
-            z-index: 2; /* Để chữ nằm trên hoa */
-            margin-bottom: 60px;
+            z-index: 2; /* Để chữ nổi trên hoa */
+            margin-bottom: 50px;
         }
 
         .intro-quote h2 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.4rem, 5vw, 1.8rem);
-            letter-spacing: 3px;
+            font-size: 1.6rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
+            margin: 0;
         }
 
         .line {
-            width: 1px; height: 60px;
-            background-color: rgba(255,255,255,0.4);
+            width: 1px;
+            height: 60px;
+            background-color: rgba(255,255,255,0.5);
             margin: 20px auto;
         }
 
+        .intro-quote p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
         .couple-grid {
+            position: relative;
+            z-index: 2;
             display: flex;
             flex-direction: column;
             gap: 40px;
             max-width: 450px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
         }
 
         .person-card {
             position: relative;
-            border-radius: 30px; 
+            border-radius: 25px; 
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
 
-        .person-
+        .person-card img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            height: 550px; 
+        }
+
+        .person-info {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 40px 20px 25px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            text-align: center;
+        }
+
+        .role-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            margin-bottom: -5px;
+            color: #ffffff;
+        }
+
+        .name-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        /* --- PHẦN 3: THÔNG TIN --- */
+        .details {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .card {
+            background: white;
+            padding: 50px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .hero { padding-top: 8vh; }
+            .main-title { font-size: 2.2rem; }
+            .flower-decor { width: 200px; } /* Hoa nhỏ lại trên điện thoại */
+            .person-card img { height: 480px; }
+        }
+
+        @media (min-width: 768px) {
+            .hero { padding-top: 15vh; }
+            .couple-grid { flex-direction: row; max-width: 900px; gap: 50px; }
+            .person-card img { height: 620px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <p class="welcome-text">WELCOME TO OUR WEDDING</p>
+            <h1 class="main-title">Minh Trân & Đức Huy</h1>
+            <div class="wedding-date">09 . 05 . 2026</div>
+        </div>
+    </section>
+
+    <section class="couple-intro">
+        <!-- Chèn 2 hình hoa vào đây -->
+        <img src="hình_hoa_1.png" class="flower-decor flower-1" alt="hoa trang trí">
+        <img src="hình_hoa_2.png" class="flower-decor flower-2" alt="hoa trang trí">
+
+        <div class="intro-quote" data-aos="fade-up">
+            <h2>When Two Hearts<br>Beat As One</h2>
+            <div class="line"></div>
+            <p>They create a soul strong<br>enough to last forever!</p>
+        </div>
+
+        <div class="couple-grid">
+            <div class="person-card" data-aos="fade-right">
+                <img src="anh_chu_re.jpg" alt="Chú rể"> 
+                <div class="person-info">
+                    <div class="role-text">Chú rể</div>
+                    <div class="name-text">ĐỨC HUY</div>
+                </div>
+            </div>
+
+            <div class="person-card" data-aos="fade-left">
+                <img src="anh_co_dau.jpg" alt="Cô dâu"> 
+                <div class="person-info">
+                    <div class="role-text">Cô dâu</div>
+                    <div class="name-text">MINH TRÂN</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="details">
+        <div class="card" data-aos="zoom-in">
+            <h2 style="font-family: 'Playfair Display'; font-size: 2rem;">Lễ Thành Hôn</h2>
+            <p style="letter-spacing: 2px;">09 THÁNG 05 NĂM 2026</p>
+            <hr style="width: 50px; margin: 20px auto; border: 0.5px solid #ccc;">
+            <p>18:00 | Thứ Bảy</p>
+            <p><b>PAVILLON TÂN SƠN NHẤT</b></p>
+            <p>Sảnh Cormorant Garamond</p>
+            <br>
+            <button style="background: var(--moss-green); color: white; border: none; padding: 12px 30px; border-radius: 25px; cursor: pointer; font-weight: 600;">
+                XÁC NHẬN THAM DỰ
+            </button>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; background: #fff; font-size: 0.8rem; color: #888;">
+        © 2026 | Developed for Happy Wedding Minh Trân & Đức Huy
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
