@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation | Minh Trân & Đức Huy</title>
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
@@ -125,7 +123,7 @@
 
         .invite-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; margin: 30px auto 40px; max-width: 600px; }
 
-        /* --- LAYOUT LỊCH THEO MẪU --- */
+        /* --- LAYOUT LỊCH --- */
         .wedding-calendar {
             display: flex;
             align-items: center;
@@ -135,49 +133,41 @@
             font-family: 'Playfair Display', serif;
             color: var(--moss-green);
         }
-
-        .calendar-side {
-            flex: 1;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 400;
-        }
-
+        .calendar-side { flex: 1; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 400; }
         .calendar-center {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0 25px;
-            border-left: 1px solid rgba(45, 62, 45, 0.4);
-            border-right: 1px solid rgba(45, 62, 45, 0.4);
+            display: flex; flex-direction: column; align-items: center; padding: 0 25px;
+            border-left: 1px solid rgba(45, 62, 45, 0.4); border-right: 1px solid rgba(45, 62, 45, 0.4);
         }
-
         .cal-day { font-size: 2.5rem; line-height: 1; margin-bottom: 5px; font-weight: 400; }
         .cal-month { font-size: 3.2rem; font-weight: 700; line-height: 0.9; margin: 5px 0; }
         .cal-year { font-size: 2.5rem; line-height: 1; margin-top: 5px; font-weight: 400; }
-
         .text-right { text-align: right; }
         .text-left { text-align: left; }
 
-        .lunar-style {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.1rem;
-            margin: 20px 0 50px;
-            opacity: 0.9;
-        }
+        .lunar-style { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; margin: 20px 0 50px; opacity: 0.9; }
 
         .location-label { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 10px; }
         .venue-name { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 2rem; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            letter-spacing: 1px;
-            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; 
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
         }
-        .address-text { font-size: 1.05rem; opacity: 0.9; line-height: 1.6; }
+        .address-text { font-size: 1.05rem; opacity: 0.9; line-height: 1.6; margin-bottom: 25px; }
+
+        /* NÚT CHỈ ĐƯỜNG THEO MẪU */
+        .btn-direction {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--moss-green);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            transition: opacity 0.3s ease;
+        }
+        .btn-direction img { width: 45px; height: auto; }
+        .btn-direction:hover { opacity: 0.8; }
 
         .btn-rsvp { 
             background: var(--moss-green); color: white; border: none; padding: 16px 45px; 
@@ -194,16 +184,15 @@
             .calendar-center { padding: 0 15px; }
             .venue-name { font-size: 1.5rem; }
             .name-display { font-size: 1.3rem; letter-spacing: 2px; }
+            .btn-direction { font-size: 1.1rem; }
+            .btn-direction img { width: 35px; }
         }
 
-        @media (min-width: 768px) {
-            .couple-grid { flex-direction: row; max-width: 900px; }
-        }
+        @media (min-width: 768px) { .couple-grid { flex-direction: row; max-width: 900px; } }
     </style>
 </head>
 <body>
 
-    <!-- PHẦN 1: HERO -->
     <section class="hero">
         <div class="hero-content" data-aos="fade-up">
             <p class="welcome-text">WELCOME TO OUR WEDDING</p>
@@ -212,17 +201,14 @@
         </div>
     </section>
 
-    <!-- PHẦN 2: CẶP ĐÔI -->
     <section class="couple-intro">
         <img src="hình_hoa_1.png" class="flower-decor flower-1" alt="hoa">
         <img src="hình_hoa_2.png" class="flower-decor flower-2" alt="hoa">
-
         <div class="intro-quote" data-aos="fade-up">
             <h2>When Two Hearts<br>Beat As One</h2>
             <div class="line"></div>
             <p style="font-family:'Playfair Display'; font-style:italic; opacity: 0.8;">They create a soul strong enough to last forever!</p>
         </div>
-
         <div class="couple-grid">
             <div class="person-card" data-aos="fade-up">
                 <img src="anh_chu_re.jpg" alt="Chú rể"> 
@@ -231,7 +217,6 @@
                     <div class="name-text-card">ĐỨC HUY</div>
                 </div>
             </div>
-
             <div class="person-card" data-aos="fade-up" data-aos-delay="200">
                 <img src="anh_co_dau.jpg" alt="Cô dâu"> 
                 <div class="person-info">
@@ -242,9 +227,7 @@
         </div>
     </section>
 
-    <!-- PHẦN 3: THÔNG TIN CHI TIẾT -->
     <section class="details-section">
-        
         <div class="family-info" data-aos="fade-up">
             <div class="family-side">
                 <h3>Nhà Trai</h3>
@@ -256,13 +239,12 @@
                 <h3>Nhà Gái</h3>
                 <p>Ông: Nguyễn Quốc Hưng</p>
                 <p>Bà: Đoàn Thị Thu Tâm</p>
-                <p style="opacity: 0.7; font-size: 0.75rem;">Phước An 2, Xã Phước Hậu,Tỉnh Khánh Hoà</p>
+                <p style="opacity: 0.7; font-size: 0.75rem;">Phước An 2, Xã Phước Hậu, Khánh Hoà</p>
             </div>
         </div>
 
         <img src="logo_wedding.png" alt="Logo" class="wedding-logo-large" data-aos="zoom-in">
 
-        <!-- TÊN ĐẦY ĐỦ CÔ DÂU CHÚ RỂ -->
         <div class="full-names-display" data-aos="fade-up">
             <div class="role-title">Út Nam</div>
             <div class="name-display">MAI ĐỨC HUY</div>
@@ -273,29 +255,20 @@
 
         <div class="invite-text" data-aos="fade-up">
             Trân trọng kính mời Quý Khách tới dự Lễ Tân Hôn<br>
-            và chung vui cùng gia đình
+            để chúc phúc cho tình yêu của chúng tôi
         </div>
 
-        <!-- LAYOUT LỊCH CHUẨN MẪU -->
         <div class="wedding-calendar" data-aos="fade-up">
-            <div class="calendar-side text-right">
-                18 GIỜ 30
-            </div>
-            
+            <div class="calendar-side text-right">18 GIỜ 30</div>
             <div class="calendar-center">
                 <div class="cal-day">09</div>
                 <div class="cal-month">05</div>
-                <div class="cal-year">26</div>
+                <div class="cal-year">2026</div>
             </div>
-
-            <div class="calendar-side text-left">
-                THỨ BẢY
-            </div>
+            <div class="calendar-side text-left">THỨ BẢY</div>
         </div>
 
-        <div class="lunar-style" data-aos="fade-up">
-            (Tức ngày 23 tháng 03 năm Bính Ngọ)
-        </div>
+        <div class="lunar-style" data-aos="fade-up">(Tức ngày 23 tháng 03 năm Bính Ngọ)</div>
 
         <div class="location-label" data-aos="fade-up">Địa điểm</div>
         <div class="venue-name" data-aos="fade-up">PAVILLON TÂN SƠN NHẤT</div>
@@ -304,13 +277,17 @@
             Sảnh tiệc: <b>PEARL - Tầng 3</b>
         </div>
 
-        <div id="countdown" data-aos="fade-up" style="margin-top: 40px; font-weight: 400; letter-spacing: 1px;">
+        <a href="https://maps.app.goo.gl/Cs2fGX1CcZW8qMZm6" target="_blank" class="btn-direction" data-aos="zoom-in">
+            <img src="icon_chi_duong.png" alt="Chỉ đường"> 
+            CHỈ ĐƯỜNG
+        </a>
+
+        <div id="countdown" data-aos="fade-up" style="margin-top: 50px; font-weight: 400; letter-spacing: 1px;">
             Cùng đếm ngược: <br>
             <span id="timer" style="font-weight: 600; color: var(--metallic-gold); font-size: 1.2rem;"></span>
         </div>
 
         <button class="btn-rsvp" data-aos="zoom-in">XÁC NHẬN THAM DỰ</button>
-
     </section>
 
     <footer style="text-align: center; padding: 60px 20px; background: #fff; font-size: 0.7rem; color: #aaa; letter-spacing: 1px;">
@@ -320,26 +297,15 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1200, once: true });
-
         const weddingDate = new Date("May 9, 2026 18:30:00").getTime();
-        const timerUpdate = setInterval(function() {
+        setInterval(function() {
             const now = new Date().getTime();
             const distance = weddingDate - now;
-            
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            const timerElement = document.getElementById("timer");
-            if (timerElement) {
-                timerElement.innerHTML = days + " ngày " + hours + ":" + minutes + ":" + seconds;
-            }
-
-            if (distance < 0) {
-                clearInterval(timerUpdate);
-                if (timerElement) timerElement.innerHTML = "LỄ CƯỚI ĐANG DIỄN RA";
-            }
+            document.getElementById("timer").innerHTML = days + " ngày " + hours + ":" + minutes + ":" + seconds;
         }, 1000);
     </script>
 </body>
