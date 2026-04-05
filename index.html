@@ -3,174 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation - Minh Trân & Đức Huy</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- AOS Library for Animations -->
+    <title>Wedding Invitation | Minh Trân & Đức Huy</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
         :root {
-            --primary-pink: #fce4ec;
-            --accent-pink: #f06292;
-            --text-dark: #4a4a4a;
-            --white: #ffffff;
+            --bg-color: #fdfaf7;
+            --text-gold: #bca371;
+            --text-dark: #333;
+            --pastel-pink: #fce4ec;
         }
 
         body {
             margin: 0;
             padding: 0;
+            background-color: var(--bg-color);
             font-family: 'Montserrat', sans-serif;
             color: var(--text-dark);
-            background-color: var(--white);
             overflow-x: hidden;
         }
+
+        /* Trang trí các góc bằng file hoa bạn gửi */
+        .decor-flower {
+            position: absolute;
+            z-index: 1;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .flower-top-left { top: 0; left: 0; width: 300px; transform: rotate(0deg); }
+        .flower-bottom-right { bottom: 0; right: 0; width: 300px; transform: rotate(180deg); }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), 
-                        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            position: relative;
+            background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(253,250,247,1) 100%);
         }
 
-        .hero h1 {
+        .main-title {
             font-family: 'Great Vibes', cursive;
-            font-size: 5rem;
-            color: var(--accent-pink);
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-size: 4.5rem;
+            color: var(--text-gold);
+            margin-bottom: 10px;
         }
 
-        .hero p {
+        .couple-names {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .wedding-date {
+            border-top: 1px solid var(--text-gold);
+            border-bottom: 1px solid var(--text-gold);
+            padding: 10px 30px;
             font-size: 1.2rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-top: 10px;
-        }
-
-        /* Content Sections */
-        .section {
-            padding: 80px 20px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
-            color: var(--accent-pink);
-            margin-bottom: 30px;
-        }
-
-        .info-card {
-            background-color: var(--primary-pink);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .date-time {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 20px 0;
-        }
-
-        .venue {
-            font-size: 1.2rem;
-            font-style: italic;
-        }
-
-        /* Dress Code */
-        .dress-code {
-            border: 2px dashed var(--accent-pink);
-            padding: 20px;
             display: inline-block;
+        }
+
+        /* Section chung */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-card {
+            background: white;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.03);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Icon trang trí từ file bạn gửi */
+        .icon-small {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+
+        /* Album ảnh */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
             margin-top: 30px;
         }
 
-        .color-dots {
-            display: flex;
-            justify-content: center;
+        .photo-item {
+            width: 100%;
+            height: 350px;
+            background: #eee;
+            border-radius: 8px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .photo-item:hover { transform: scale(1.02); }
+
+        /* Dresscode */
+        .dresscode-box {
+            background: var(--pastel-pink);
+            padding: 20px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
             gap: 15px;
-            margin-top: 15px;
+            margin-top: 20px;
+        }
+        .color-circle {
+            width: 20px; height: 20px; border-radius: 50%; border: 1px solid #fff;
         }
 
-        .dot {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border: 1px solid #ddd;
-        }
-
-        /* Audio Player Styling */
-        #music-control {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: var(--accent-pink);
-            color: white;
-            padding: 15px;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
+        /* Mobile Responsive */
         @media (max-width: 600px) {
-            .hero h1 { font-size: 3rem; }
-            .section-title { font-size: 2.5rem; }
+            .main-title { font-size: 3rem; }
+            .flower-top-left, .flower-bottom-right { width: 150px; }
+            .section-card { padding: 30px 15px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Music (Beautiful In White) -->
-    <div id="music-control" onclick="toggleMusic()">🎵</div>
-    <audio id="bg-music" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        <!-- Thay link nhạc "Beautiful In White" thực tế vào đây -->
-    </audio>
+    <!-- Hình hoa trang trí (Thay 'hoa1.png' bằng file của bạn) -->
+    <img src="hình_hoa_1.png" class="decor-flower flower-top-left" alt="decor">
+    <img src="hình_hoa_2.png" class="decor-flower flower-bottom-right" alt="decor">
 
-    <header class="hero">
-        <div data-aos="fade-down" data-aos-duration="1500">
-            <h1>Minh Trân & Đức Huy</h1>
-            <p>Save Our Date</p>
-            <div style="font-size: 2rem; margin-top: 20px;">09 . 05 . 2026</div>
-        </div>
-    </header>
-
-    <section class="section">
-        <div class="info-card" data-aos="zoom-in">
-            <h2 class="section-title">Trân trọng kính mời</h2>
-            <p>Sự hiện diện của bạn là niềm vinh hạnh cho gia đình chúng tôi</p>
-            
-            <div class="date-time">
-                Thứ Bảy | 09.05.2026 | 18:00
-            </div>
-            
-            <div class="venue">
-                <strong>Pavillon Tân Sơn Nhất</strong><br>
-                202 Hoàng Văn Thụ, Phường 9, Phú Nhuận, TP. HCM
-            </div>
-
-            <div class="dress-code">
-                <strong>Dress Code: Summer Cocktail</strong>
-                <div class="color-dots">
-                    <div class="dot" style="background-color: #fce4ec;"></div>
-                    <div class="dot" style="background-color: #ffffff;"></div>
-                    <div class="dot" style="background-color: #f8bbd0;"></div>
-                </div>
-            </div>
+    <section class="hero">
+        <div data-aos="fade-up">
+            <p style="letter-spacing: 5px;">WELCOME TO OUR WEDDING</p>
+            <h1 class="main-title">Minh Trân & Đức Huy</h1>
+            <div class="wedding-date">09 . 05 . 2026</div>
         </div>
     </section>
 
-    <section class="section" data-aos="fade-up">
-        <h2 class="section-title">Album Hình Ảnh</h2>
-        <p>(Khu vực này bạn có thể chèn các hình ảnh 4K/8K của mình)</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-            <div style="background: #eee; height: 200px; border-radius: 1
+    <div class="container">
+        
+        <!-- Lễ Thành Hôn -->
+        <div class="section-card" data-aos="fade-up">
+            <img src="nhan_cuoi.png" class="icon-small" alt="icon">
+            <h2 style="font-family: 'Playfair Display';">Lễ Thành Hôn</h2>
+            <p>Sự hiện diện của bạn là món quà trân quý nhất với chúng mình</p>
+            <p><b>18:00 | Thứ Bảy, 09 tháng 05 năm 2026</b></p>
+            <p><i>Pavillon Tân Sơn Nhất - Sảnh Cormorant Garamond</i></p>
+            
+            <div class="dresscode-box">
+                <span>Dress Code:</span>
+                <div class="color-circle" style="background: #fce4ec;"></div>
+                <div class="color-circle" style="background: #ffffff;"></div>
+                <div class="color-circle" style="background: #bca371;"></div>
+            </div>
+        </div>
+
+        <!-- Album Khoảnh Khắc -->
+        <div class="section-card" data-aos="fade-up">
+            <img src="camera.png" class="icon-small" alt="icon">
+            <h2 style="font-family: 'Playfair Display';">Chia Sẻ Khoảnh Khắc</h2>
+            <div class="photo-grid">
+                <!-- Thay ảnh cưới của bạn vào đây -->
+                <img src="anh_cuoi_1.jpg" class="photo-item" alt="Wedding 1">
+                <img src="anh_cuoi_2.jpg" class="photo-item" alt="Wedding 2">
+                <img src="anh_cuoi_3.jpg" class="photo-item" alt="Wedding 3">
+            </div>
+        </div>
+
+        <!-- Quà tặng / RSVP -->
+        <div class="section-card" data-aos="fade-up">
+            <img src="hoa_chum.png" class="icon-small" alt="icon">
+            <h2 style="font-family: 'Playfair Display';">Gửi Lời Chúc Tới Tụi Mình</h2>
+            <p>Cảm ơn bạn đã luôn yêu thương và ủng hộ Minh Trân & Đức Huy</p>
+            <button style="background: var(--text-gold); color: white; border: none; padding: 12px 30px; border-radius: 25px; cursor: pointer; font-family: 'Montserrat';">
+                Xác nhận tham dự (RSVP)
+            </button>
+        </div>
+
+    </div>
+
+    <footer style="text-align: center; padding: 40px; font-size: 0.8rem; color: #999;">
+        © 2026 | Made with ❤️ for Minh Trân & Đức Huy
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: true
+        });
+    </script>
+</body>
+</html>
