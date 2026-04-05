@@ -11,9 +11,9 @@
     <style>
         :root {
             --bg-color: #fdfaf7;
-            /* MÀU GOLD MỚI: Đậm, nổi khối và óng ả */
+            /* MÀU GOLD MỚI: Sang trọng, óng ả và nổi khối 3D */
             --metallic-gold: #c6a365; 
-            --gold-bright: #f0e6cd;
+            --gold-light: #f1e4cf;
             --gold-shadow: #856f4a;
             --text-dark: #333;
             --code-brown: #744b34;
@@ -37,14 +37,12 @@
         .flower-top-left { top: 0; left: 0; width: 300px; }
         .flower-bottom-right { bottom: 0; right: 0; width: 300px; transform: rotate(180deg); }
 
-        /* --- PHẦN HERO: TỐI ƯU VỊ TRÍ VÀ HIỆU ỨNG CHỮ GOLD 3D --- */
+        /* --- PHẦN HERO: TỐI ƯU HIỂN THỊ CHỮ VÀ HIỆU ỨNG GOLD 3D --- */
         .hero {
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; 
-            /* CHỈNH SỬA: Kéo cụm chữ xuống thấp hơn một chút */
-            padding-top: 15vh; 
+            justify-content: center;
             align-items: center;
             text-align: center;
             position: relative;
@@ -62,35 +60,28 @@
             font-size: clamp(2.8rem, 9vw, 5.5rem); 
             margin: 10px 0;
             white-space: nowrap; 
-            /* CHỈNH SỬA: Màu Gold óng ả và nổi khối 3D */
+            /* CHỈNH SỬA: Hiệu ứng Gold óng ả và nổi khối 3D */
             color: var(--metallic-gold); 
             text-shadow: 
-                0px 1px 0px var(--gold-bright),
+                0px 1px 0px var(--gold-light),
                 0px 2px 0px var(--gold-shadow),
                 0px 3px 0px rgba(0,0,0,0.1),
                 1px 1px 10px rgba(0,0,0,0.3);
         }
 
         .wedding-date {
-            /* CHỈNH SỬA: Chuyển màu viền sang TRẮNG */
-            border-top: 1.5px solid #fff;
-            border-bottom: 1.5px solid #fff;
+            border-top: 1.5px solid var(--text-dark);
+            border-bottom: 1.5px solid var(--text-dark);
             padding: 8px 25px;
             font-size: clamp(1rem, 3.5vw, 1.3rem);
             display: inline-block;
             letter-spacing: 4px;
-            /* CHỈNH SỬA: Chuyển màu ngày tháng sang TRẮNG */
-            color: #fff; 
-            font-weight: 400;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         .welcome-text {
             letter-spacing: 5px;
             font-size: clamp(0.7rem, 2.5vw, 0.9rem);
-            /* CHỈNH SỬA: Chuyển màu chữ WELCOME... sang TRẮNG */
-            color: #fff; 
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            color: var(--text-dark);
             margin-bottom: 8px;
             font-weight: 400;
         }
@@ -108,11 +99,29 @@
         .dresscode-colors { display: flex; gap: 12px; justify-content: center; }
         .color-circle { width: 42px; height: 42px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
 
+        /* --- ĐIỀU CHỈNH RIÊNG CHO MOBILE --- */
         @media (max-width: 600px) {
-            .hero { padding-top: 10vh; } 
             .family-grid { grid-template-columns: 1fr; }
             .flower-top-left, .flower-bottom-right { width: 160px; }
             .section-card { padding: 40px 20px; }
+
+            /* CHỈNH SỬA: Thêm nền mờ và đổi màu chữ sang trắng trên Mobile */
+            .hero-content {
+                background: rgba(0, 0, 0, 0.4); /* Lớp nền mờ đen */
+                padding: 20px;
+                border-radius: 8px;
+            }
+            .welcome-text, .wedding-date {
+                color: #fff; /* Chữ trắng nổi bật */
+            }
+            .wedding-date {
+                border-color: #fff; /* Viền trắng */
+                font-size: 1rem; /* Giảm kích thước chữ */
+            }
+            .main-title {
+                /* Giảm kích thước bóng đổ trên mobile để chữ không bị nhòe */
+                text-shadow: 0px 1px 0px var(--gold-light), 1px 1px 5px rgba(0,0,0,0.3);
+            }
         }
     </style>
 </head>
