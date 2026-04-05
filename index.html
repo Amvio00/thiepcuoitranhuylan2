@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation | Minh Trân & Đức Huy</title>
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
     
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root {
             --bg-color: #fdfaf7;
             --text-gold: #bca371;
             --text-dark: #333;
-            --pastel-pink: #fce4ec;
+            /* Cập nhật mã màu Dresscode mới */
+            --code-brown: #795548;
+            --code-black: #000000;
+            --code-pink: #f8bbd0;
+            --code-beige: #e1d5c9;
+            --code-navy: #1a237e;
         }
 
         body {
@@ -27,17 +30,15 @@
             overflow-x: hidden;
         }
 
-        /* Trang trí các góc bằng file hoa bạn gửi */
         .decor-flower {
             position: absolute;
             z-index: 1;
             opacity: 0.6;
             pointer-events: none;
         }
-        .flower-top-left { top: 0; left: 0; width: 300px; transform: rotate(0deg); }
+        .flower-top-left { top: 0; left: 0; width: 300px; }
         .flower-bottom-right { bottom: 0; right: 0; width: 300px; transform: rotate(180deg); }
 
-        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -46,7 +47,6 @@
             align-items: center;
             text-align: center;
             position: relative;
-            background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(253,250,247,1) 100%);
         }
 
         .main-title {
@@ -54,13 +54,6 @@
             font-size: 4.5rem;
             color: var(--text-gold);
             margin-bottom: 10px;
-        }
-
-        .couple-names {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
         }
 
         .wedding-date {
@@ -71,7 +64,6 @@
             display: inline-block;
         }
 
-        /* Section chung */
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -89,56 +81,64 @@
             margin-bottom: 50px;
         }
 
-        /* Icon trang trí từ file bạn gửi */
         .icon-small {
             width: 60px;
             margin-bottom: 15px;
         }
 
-        /* Album ảnh */
+        /* Styling cho Family Info */
+        .family-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        .family-side h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-gold);
+            border-bottom: 1px solid var(--text-gold);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .family-side p { margin: 10px 0; font-size: 1.1rem; }
+
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
             margin-top: 30px;
         }
-
         .photo-item {
-            width: 100%;
-            height: 350px;
-            background: #eee;
-            border-radius: 8px;
-            object-fit: cover;
-            transition: transform 0.3s;
+            width: 100%; height: 350px; background: #eee; border-radius: 8px; object-fit: cover;
         }
-        .photo-item:hover { transform: scale(1.02); }
 
-        /* Dresscode */
-        .dresscode-box {
-            background: var(--pastel-pink);
-            padding: 20px;
-            border-radius: 50px;
-            display: inline-flex;
+        /* Styling Dresscode mới */
+        .dresscode-section {
+            display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 15px;
             margin-top: 20px;
         }
+        .dresscode-colors {
+            display: flex; gap: 10px; justify-content: center;
+        }
         .color-circle {
-            width: 20px; height: 20px; border-radius: 50%; border: 1px solid #fff;
+            width: 35px; height: 35px; border-radius: 50%; border: 1px solid #eee;
         }
 
-        /* Mobile Responsive */
         @media (max-width: 600px) {
             .main-title { font-size: 3rem; }
             .flower-top-left, .flower-bottom-right { width: 150px; }
             .section-card { padding: 30px 15px; }
+            .family-grid { grid-template-columns: 1fr; gap: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hình hoa trang trí (Thay 'hoa1.png' bằng file của bạn) -->
-    <img src="hình_hoa_1.png" class="decor-flower flower-top-left" alt="decor">
+    
+<img src="hình_hoa_1.png" class="decor-flower flower-top-left" alt="decor">
     <img src="hình_hoa_2.png" class="decor-flower flower-bottom-right" alt="decor">
 
     <section class="hero">
@@ -151,39 +151,57 @@
 
     <div class="container">
         
-        <!-- Lễ Thành Hôn -->
-        <div class="section-card" data-aos="fade-up">
+        
+<div class="section-card" data-aos="fade-up">
             <img src="nhan_cuoi.png" class="icon-small" alt="icon">
             <h2 style="font-family: 'Playfair Display';">Lễ Thành Hôn</h2>
             <p>Sự hiện diện của bạn là món quà trân quý nhất với chúng mình</p>
             <p><b>18:00 | Thứ Bảy, 09 tháng 05 năm 2026</b></p>
             <p><i>Pavillon Tân Sơn Nhất - Sảnh Cormorant Garamond</i></p>
             
-            <div class="dresscode-box">
-                <span>Dress Code:</span>
-                <div class="color-circle" style="background: #fce4ec;"></div>
-                <div class="color-circle" style="background: #ffffff;"></div>
-                <div class="color-circle" style="background: #bca371;"></div>
+            <div class="family-grid">
+                <div class="family-side">
+                    <h3>Nhà Trai</h3>
+                    <p><b>Bố:</b> Ông Mai Văn Thọ</p>
+                    <p><b>Mẹ:</b> Bà Vũ Thuý Phượng</p>
+                    <p><i>Phan Huy Ích, Phường Tân Sơn, TP.HCM</i></p>
+                </div>
+                <div class="family-side">
+                    <h3>Nhà Gái</h3>
+                    <p><b>Bố:</b> Ông Nguyễn Quốc Hưng</p>
+                    <p><b>Mẹ:</b> Bà Đoàn Thị Thu Tâm</p>
+                    <p><i>Phước An 2, Xã Phước Hậu, Tỉnh Khánh Hoà</i></p>
+                </div>
+            </div>
+
+            <div class="dresscode-section">
+                <span>Dresscode:</span>
+                <div class="dresscode-colors">
+                    <div class="color-circle" style="background: var(--code-brown);" title="Nâu đất"></div>
+                    <div class="color-circle" style="background: var(--code-black);" title="Đen"></div>
+                    <div class="color-circle" style="background: var(--code-pink);" title="Hồng phấn"></div>
+                    <div class="color-circle" style="background: var(--code-beige);" title="Be nhạt"></div>
+                    <div class="color-circle" style="background: var(--code-navy);" title="Xanh navy"></div>
+                </div>
             </div>
         </div>
 
-        <!-- Album Khoảnh Khắc -->
-        <div class="section-card" data-aos="fade-up">
+        
+<div class="section-card" data-aos="fade-up">
             <img src="camera.png" class="icon-small" alt="icon">
             <h2 style="font-family: 'Playfair Display';">Chia Sẻ Khoảnh Khắc</h2>
             <div class="photo-grid">
-                <!-- Thay ảnh cưới của bạn vào đây -->
-                <img src="anh_cuoi_1.webp" class="photo-item" alt="Wedding 1">
+                
+<img src="anh_cuoi_1.webp" class="photo-item" alt="Wedding 1">
                 <img src="anh_cuoi_2.webp" class="photo-item" alt="Wedding 2">
                 <img src="anh_cuoi_3.webp" class="photo-item" alt="Wedding 3">
             </div>
         </div>
 
-        <!-- Quà tặng / RSVP -->
-        <div class="section-card" data-aos="fade-up">
+        
+<div class="section-card" data-aos="fade-up">
             <img src="hoa_chum.png" class="icon-small" alt="icon">
             <h2 style="font-family: 'Playfair Display';">Gửi Lời Chúc Tới Tụi Mình</h2>
-            <p>Cảm ơn bạn đã luôn yêu thương và ủng hộ Minh Trân & Đức Huy</p>
             <button style="background: var(--text-gold); color: white; border: none; padding: 12px 30px; border-radius: 25px; cursor: pointer; font-family: 'Montserrat';">
                 Xác nhận tham dự (RSVP)
             </button>
@@ -195,13 +213,10 @@
         © 2026 | Made with ❤️ for Minh Trân & Đức Huy
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1200,
-            once: true
-        });
+        AOS.init({ duration: 1200, once: true });
     </script>
 </body>
 </html>
