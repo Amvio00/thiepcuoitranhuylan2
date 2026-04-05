@@ -90,7 +90,7 @@
         .role-text-card { font-family: 'Great Vibes', cursive; font-size: 2.8rem; margin-bottom: -5px; color: var(--metallic-gold); }
         .name-text-card { font-family: 'Playfair Display', serif; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: #ffffff; }
 
-        /* --- PHẦN 3: THÔNG TIN CHI TIẾT (LỊCH MỚI) --- */
+        /* --- PHẦN 3: THÔNG TIN CHI TIẾT --- */
         .details-section {
             background: url('image_21.jpg') repeat;
             padding: 80px 15px;
@@ -99,23 +99,31 @@
         }
 
         .family-info { 
-            display: flex; justify-content: center; gap: 20px; max-width: 900px; margin: 0 auto 50px; 
+            display: flex; justify-content: center; gap: 20px; max-width: 900px; margin: 0 auto 40px; 
         }
         .family-side { flex: 1; min-width: 0; }
-        .family-side h3 { font-family: 'Playfair Display', serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; border-bottom: 1px solid rgba(45, 62, 45, 0.2); display: inline-block; padding-bottom: 5px; }
-        .family-side p { margin: 3px 0; line-height: 1.4; font-weight: 500; font-size: 0.85rem; }
+        .family-side h3 { font-family: 'Playfair Display', serif; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; border-bottom: 1px solid rgba(45, 62, 45, 0.2); display: inline-block; padding-bottom: 5px; }
+        .family-side p { margin: 2px 0; line-height: 1.4; font-weight: 500; font-size: 0.85rem; }
 
-        .wedding-logo-large { width: 150px; height: auto; margin: 0 auto 30px; display: block; opacity: 0.9; }
+        .wedding-logo-large { width: 120px; height: auto; margin: 0 auto 20px; display: block; opacity: 0.9; }
 
-        .invite-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; margin: 30px auto; max-width: 600px; }
+        .couple-names-large {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--metallic-gold);
+            margin: 10px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
 
-        /* --- CẤU TRÚC LỊCH THEO MẪU --- */
+        .invite-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; margin: 20px auto 30px; max-width: 600px; }
+
+        /* LAYOUT LỊCH */
         .wedding-calendar {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 25px;
-            margin: 40px auto;
+            margin: 30px auto;
             font-family: 'Playfair Display', serif;
             color: var(--moss-green);
         }
@@ -149,7 +157,7 @@
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-size: 1.1rem;
-            margin: 20px 0 40px;
+            margin: 15px 0 35px;
             opacity: 0.9;
         }
 
@@ -178,7 +186,7 @@
             .wedding-calendar { gap: 15px; }
             .calendar-center { padding: 0 15px; }
             .venue-name { font-size: 1.4rem; }
-            .family-info { flex-direction: row; gap: 10px; }
+            .couple-names-large { font-size: 2.8rem; }
         }
 
         @media (min-width: 768px) {
@@ -235,24 +243,29 @@
                 <h3>Nhà Trai</h3>
                 <p>Ông: Mai Văn Thọ</p>
                 <p>Bà: Vũ Thuý Phượng</p>
-                <p style="opacity: 0.7; font-size: 0.75rem;">Phan Huy Ích, P. Tân Sơn, TP. HCM</p>
+                <p style="opacity: 0.7; font-size: 0.7rem;">Phan Huy Ích, P. Tân Sơn, TP. HCM</p>
             </div>
             <div class="family-side">
                 <h3>Nhà Gái</h3>
                 <p>Ông: Nguyễn Quốc Hưng</p>
                 <p>Bà: Đoàn Thị Thu Tâm</p>
-                <p style="opacity: 0.7; font-size: 0.75rem;">Phước An 2, Xã Phước Hậu, Tỉnh Khánh Hoà</p>
+                <p style="opacity: 0.7; font-size: 0.7rem;">Phước An 2, Xã Phước Hậu, Khánh Hoà</p>
             </div>
         </div>
 
         <img src="logo_wedding.png" alt="Logo" class="wedding-logo-large" data-aos="zoom-in">
+
+        <!-- TÊN CÔ DÂU CHÚ RỂ ĐÃ QUAY TRỞ LẠI ĐÂY -->
+        <div class="couple-names-large" data-aos="fade-up">
+            Đức Huy & Minh Trân
+        </div>
 
         <div class="invite-text" data-aos="fade-up">
             Trân trọng kính mời Quý Khách tới dự Lễ Tân Hôn<br>
             để chúc phúc cho tình yêu của chúng tôi
         </div>
 
-        <!-- LAYOUT LỊCH THEO MẪU HÌNH ẢNH -->
+        <!-- LAYOUT LỊCH -->
         <div class="wedding-calendar" data-aos="fade-up">
             <div class="calendar-side text-right">
                 18 GIỜ 30
@@ -280,7 +293,7 @@
             Sảnh tiệc: <b>PEARL - Tầng 3</b>
         </div>
 
-        <div id="countdown" data-aos="fade-up" style="margin-top: 40px; font-weight: 400; letter-spacing: 1px;">
+        <div id="countdown" data-aos="fade-up" style="margin-top: 30px;">
             Cùng đếm ngược: <br>
             <span id="timer" style="font-weight: 600; color: var(--metallic-gold); font-size: 1.1rem;"></span>
         </div>
@@ -295,10 +308,8 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Khởi tạo hiệu ứng bay lượn
         AOS.init({ duration: 1200, once: true });
 
-        // Bộ đếm ngược đến ngày cưới
         const weddingDate = new Date("May 9, 2026 18:30:00").getTime();
         const timerUpdate = setInterval(function() {
             const now = new Date().getTime();
